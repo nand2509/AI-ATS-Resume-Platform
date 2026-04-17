@@ -1,182 +1,47 @@
-# 🎯 AI ATS Resume Platform
+# 🎯 ResumeIQ – Advanced ATS Resume Analyzer
 
-An AI-powered web application that helps job seekers **analyze resumes, improve ATS scores, build resumes, and estimate salaries** — all in one place.
+A production-grade Streamlit app for AI-powered resume analysis.
 
----
+## Features
+- **Semantic Similarity** – TF-IDF cosine similarity between resume & JD
+- **Skill Gap Analysis** – 10 skill categories, matched/missing/bonus skills
+- **Multi-Dimensional Scoring** – Adjustable weights for 3 scoring dimensions
+- **Visualizations** – Gauge, radar, bar charts, category heatmaps, keyword frequency
+- **Actionable Insights** – Personalized tips based on your score
+- **Keyword Analysis** – Top keywords from resume vs JD with overlap view
 
-## 🚀 Features
+## Setup
 
-### 📄 Resume Checker
-
-* ATS-based resume scoring
-* Semantic matching with job descriptions
-* Skill gap analysis (matched, missing, bonus skills)
-* Keyword overlap detection
-* Resume section checker
-* Smart recommendations & insights
-
-### 🧾 Resume Builder
-
-* Create structured, ATS-friendly resumes
-* Input-based resume generation
-* Clean and simple UI
-
-### 💰 Salary Predictor
-
-* Estimate salary based on:
-
-  * Skills
-  * Experience
-* Quick insights into market value
-
-### 🌐 Additional Pages
-
-* ✍️ Blog (career tips & insights)
-* 📞 Contact form
-* ℹ️ About page
-
----<img width="1876" height="745" alt="image" src="https://github.com/user-attachments/assets/b1188bcc-dd08-4f09-97f0-d5f3f2e87454" />
-
-
-## 🧠 Tech Stack
-
-* **Frontend/UI**: Streamlit
-* **Data Processing**: Pandas, NumPy
-* **Machine Learning / NLP**:
-
-  * Scikit-learn (TF-IDF, Cosine Similarity)
-  * Sentence Transformers (for semantic matching)
-* **Visualization**: Plotly
-* **PDF Parsing**: pdfplumber
-
----
-
-## 📁 Project Structure
-
-```
-resume-analyzer/
-│
-├── app.py                     # Main landing page
-├── pages/
-│   ├── 1_Resume_Checker.py
-│   ├── 2_Resume_Builder.py
-│   ├── 3_Salary_Predictor.py
-│   ├── 4_Blog.py
-│   ├── 5_Contact.py
-│   ├── 6_About.py
-│
-├── utils/                     # Helper functions
-├── data/                      # Skills dataset
-├── models/                    # ML logic (optional)
-├── requirements.txt
-└── README.md
-```
-
----
-
-## ⚙️ Installation & Setup
-
-### 1️⃣ Clone the repository
-
-```
-git clone https://github.com/your-username/resume-analyzer.git
-cd resume-analyzer
-```
-
-### 2️⃣ Create virtual environment (recommended)
-
-```
+```bash
+# Create virtual environment
 python -m venv venv
-venv\Scripts\activate   # Windows
-```
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
 
-### 3️⃣ Install dependencies
-
-```
+# Install dependencies
 pip install -r requirements.txt
-```
 
----
-
-## ▶️ Run the App
-
-```
+# Run the app
 streamlit run app.py
 ```
 
-Then open in browser:
-
+## Project Structure
 ```
-http://localhost:8501
+resume-analyzer/
+├── app.py                  # Main Streamlit app
+├── requirements.txt
+├── data/
+│   └── skills.json         # Categorized skills database (10 categories)
+└── utils/
+    ├── __init__.py
+    ├── parser.py           # PDF text extraction
+    ├── cleaner.py          # Text cleaning + keyword extraction
+    ├── extractor.py        # Skill extraction by category
+    ├── scorer.py           # Multi-dimensional scoring engine
+    └── insights.py         # Personalized insight generation
 ```
 
----
-
-## 📊 How It Works
-
-1. Upload your resume (PDF)
-2. Paste job description
-3. System analyzes:
-
-   * Semantic similarity
-   * Skills match
-   * Keywords
-   * Resume structure
-4. Get:
-
-   * ATS Score
-   * Insights
-   * Recommendations
-   * Visual analytics
-
----
-
-## 🎯 Use Cases
-
-* Job seekers improving resumes
-* Students preparing for placements
-* Data analysts / developers applying for jobs
-* Career coaches & recruiters
-
----
-
-## 🚀 Future Enhancements
-
-* 🔐 User authentication (login/signup)
-* 📂 Save & manage resumes
-* 📄 Download resume as PDF
-* 🤖 AI resume rewriting (LLM-based)
-* 🌍 Deploy on cloud (Streamlit Cloud / AWS)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome!
-Feel free to fork this repo and submit a pull request.
-
----
-
-## 📞 Contact
-
-For any queries or suggestions:
-
-* Email: [your-email@example.com](mailto:your-email@example.com)
-* LinkedIn: your-profile-link
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-## ⭐ Support
-
-If you found this project useful, give it a ⭐ on GitHub!
-
----
-<img width="1876" height="745" alt="image" src="https://github.com/user-attachments/assets/6cdcc489-4023-450a-a016-3be0d0327b96" />
-
-**Built with ❤️ using Python & Streamlit**
+## Deploy to Streamlit Cloud
+1. Push to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect repo → select `app.py` → Deploy
