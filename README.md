@@ -35,7 +35,8 @@ An AI-powered web application that helps job seekers **analyze resumes, improve 
 * 📞 Contact form
 * ℹ️ About page
 
----
+---<img width="1876" height="745" alt="image" src="https://github.com/user-attachments/assets/b1188bcc-dd08-4f09-97f0-d5f3f2e87454" />
+
 
 ## 🧠 Tech Stack
 
@@ -176,5 +177,6 @@ This project is licensed under the MIT License.
 If you found this project useful, give it a ⭐ on GitHub!
 
 ---
+<img width="1876" height="745" alt="image" src="https://github.com/user-attachments/assets/6cdcc489-4023-450a-a016-3be0d0327b96" />
 
 **Built with ❤️ using Python & Streamlit**
